@@ -7,7 +7,7 @@ import {
 
 const Navbar = () => {
   return (
-    <nav className="flex-center container mt-5 flex-col gap-2 rounded-xl bg-neutral-300 py-2">
+    <nav className="flex-center container mt-5 flex-col  border gap-2 rounded-xl bg-white/20 backdrop-blur-sm py-2">
       <h1 className="heading-logo">বাংলায় লিখো</h1>
       <div className="flex-center gap-2 transition-all ease-in-out duration-500">
         <a href="#" className="hover:text-indigo-600" target="_blank">

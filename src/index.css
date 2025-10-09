@@ -12,7 +12,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Anek Bangla", sans-serif;
-  background-color: whitesmoke;
+  background-image:
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(173, 216, 230, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(255, 182, 193, 0.4),
+      transparent 60%
+    );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden
 }
 
 /* @theme {
@@ -24,11 +38,11 @@ body {
 } */
 
 .container {
-  @apply mx-auto w-full max-w-screen-lg;
+  @apply mx-auto w-[95%] max-w-screen-lg;
 }
 
 .section {
-  @apply mt-28 md:mt-48; /* adjust as needed */
+  @apply mt-24 md:mt-30; /* adjust as needed */
 }
 
 .mx {
@@ -39,7 +53,7 @@ body {
   @apply text-2xl leading-8 font-extrabold text-black md:text-3xl md:leading-12 lg:text-5xl lg:leading-16;
 }
 .heading-xl {
-  @apply text-4xl leading-9 font-extrabold text-black md:text-5xl md:leading-17 lg:text-7xl lg:leading-23;
+  @apply text-4xl leading-7 font-extrabold text-black md:text-5xl md:leading-15 lg:text-7xl lg:leading-18;
 }
 .heading-md {
   @apply text-3xl leading-8 font-bold text-black md:text-4xl md:leading-14 lg:text-6xl lg:leading-20;
@@ -51,7 +65,7 @@ body {
   @apply text-lg leading-7 font-semibold text-black md:text-2xl md:leading-8 lg:text-4xl lg:leading-12;
 }
 .description {
-  @apply max-w-[40ch] text-sm text-black/75;
+  @apply max-w-[60ch] text-sm text-black/75;
 }
 
 .flex-center {
