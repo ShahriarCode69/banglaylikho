@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaCopy } from "react-icons/fa6";
 
 const Chatbox = () => {
-  const [banglishInput, setBanglishInput] = useState("");
-  const [banglaOutput, setBanglaOutput] = useState("");
+  const [banglishInput, setBanglishInput] = useState(() => {
+    const saved = localStorage.getItem("banglishInput");
+    return saved ? JSON.parse(saved) : "";
+  });
+  const [banglaOutput, setBanglaOutput] = useState(() => {
+    const saved = localStorage.getItem("banglaOutput");
+    return saved ? JSON.parse(saved) : "";
+  });
+  
   const [isLoading, setIsLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState("");
+
+
+  useEffect(() => {
+    localStorage.setItem('banglishInput', JSON.stringify(banglishInput));
+  }, [banglishInput])
+  useEffect(() => {
+    localStorage.setItem('banglaOutput', JSON.stringify(banglaOutput));
+  }, [banglaOutput])
 
   const handleInputChange = (e) => {
     setBanglishInput(e.target.value);
