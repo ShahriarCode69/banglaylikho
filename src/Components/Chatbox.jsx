@@ -69,6 +69,7 @@ const Chatbox = () => {
     // Show toast
     setCopySuccess("✅ Copied to clipboard!");
 
+    setBanglishInput("")
     // Clear output
     setBanglaOutput("");
 
@@ -81,15 +82,15 @@ const Chatbox = () => {
       <textarea
         onChange={handleInputChange}
         value={banglishInput}
-        className="w-full rounded-lg border p-3 text-gray-800"
+        className="w-full rounded-lg border p-3 text-gray-800 bg-white"
         placeholder="Type Banglish here..."
       />
       <button
         onClick={handleConvert}
         disabled={!banglishInput.trim() || isLoading}
-        className={`rounded-full bg-indigo-600 px-10 py-3 font-semibold text-white shadow-md transition-all hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-500/50 ${
+        className={`rounded-full bg-primary px-10 py-3 font-semibold text-white shadow-md transition-all hover:bg-secondary focus:ring-4 focus:ring-indigo-500/50 ${
           !banglishInput.trim() || isLoading
-            ? "cursor-not-allowed opacity-70"
+            ? "cursor-not-allowed"
             : ""
         }`}
       >
@@ -101,12 +102,12 @@ const Chatbox = () => {
           <textarea
             readOnly
             value={banglaOutput}
-            className="min-h-56 w-full cursor-default resize-none rounded-xl border border-gray-300 bg-gray-100 p-4 font-['Shonar_Bangla'] text-xl text-gray-800 shadow-inner"
+            className="min-h-56 w-full cursor-default resize-none rounded-xl border border-gray-300 bg-white p-4 font-['Shonar_Bangla'] text-xl text-gray-800 shadow-inner"
             lang="bn"
           />
           <button
             onClick={handleCopy}
-            className="absolute top-2 right-2 rounded-lg p-2 text-gray-400 transition-colors hover:text-indigo-600"
+            className="absolute top-2 right-2 rounded-lg p-2 text-gray-400 transition-colors hover:text-secondary"
             title="Copy to Clipboard"
           >
             <FaCopy size={26}/>
@@ -115,7 +116,7 @@ const Chatbox = () => {
       )}
 
       {copySuccess && (
-        <div className="animate-fade-in fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-indigo-600 px-6 py-3 text-sm text-white shadow-lg">
+        <div className="animate-fade-in fixed bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-accent px-6 py-3 text-sm text-white shadow-lg">
           {copySuccess}
         </div>
       )}

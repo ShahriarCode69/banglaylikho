@@ -12,30 +12,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Anek Bangla", sans-serif;
-  background-image:
-    radial-gradient(
-      circle at 30% 70%,
-      rgba(173, 216, 230, 0.35),
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 70% 30%,
-      rgba(255, 182, 193, 0.4),
-      transparent 60%
-    );
-  background-position: center;
+  background-color: whitesmoke;
+  background-image: url("/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-y: hidden
+  background-position: center;
 }
 
-/* @theme {
-  --color-primary: hsl(225 100% 59%);
-  --color-dark: hsl(225 30% 6%);
-  --color-dark2: hsl(225 40% 12%);
-  --color-light: hsl(184 20% 96%);
-  --color-light-muted: hsl(184 100% 96%);
-} */
+@theme {
+  --color-primary: hsl(14, 92%, 61%);
+  --color-secondary: hsl(153, 50%, 68%);
+  --color-accent: hsl(230, 38%, 36%);
+}
 
 .container {
   @apply mx-auto w-[95%] max-w-screen-lg;
