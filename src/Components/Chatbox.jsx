@@ -93,7 +93,7 @@ const Chatbox = () => {
   };
 
   return (
-    <section className="relative mt-12 space-y-4">
+    <section className="relative mt-12 space-y-4 flex-center flex-col">
       <textarea
         onChange={handleInputChange}
         value={banglishInput}
@@ -103,7 +103,7 @@ const Chatbox = () => {
       <button
         onClick={handleConvert}
         disabled={!banglishInput.trim() || isLoading}
-        className={`rounded-full bg-primary px-10 py-3 font-semibold text-white shadow-md transition-all hover:bg-secondary focus:ring-4 focus:ring-indigo-500/50 ${
+        className={`rounded-full bg-primary mx-auto px-10 py-3 font-semibold text-white shadow-md transition-all hover:bg-secondary focus:ring-4 focus:ring-indigo-500/50 ${
           !banglishInput.trim() || isLoading
             ? "cursor-not-allowed"
             : ""
@@ -113,7 +113,7 @@ const Chatbox = () => {
       </button>
 
       {banglaOutput && !banglaOutput.includes("Translating") && (
-        <div className="relative">
+        <div className="relative w-full">
           <textarea
             readOnly
             value={banglaOutput}
